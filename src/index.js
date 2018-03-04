@@ -1,27 +1,37 @@
 class SmartCalculator {
   constructor(initialValue) {
-    // your implementation
+    this.initialValue = initialValue.toString();  // приводим к строковому типу
   }
 
   add(number) {
-    // your implementation
+    this.initialValue = `${this.initialValue}+${number}`;  // вставка значений выражений в строку
+    return this;
   }
-  
+
   subtract(number) {
-    // your implementation
+    this.initialValue = `${this.initialValue}-${number}`;
+    return this;
   }
 
   multiply(number) {
-    // your implementation
+    this.initialValue = `${this.initialValue}*${number}`;
+    return this;
   }
 
   devide(number) {
-    // your implementation
+    this.initialValue = `${this.initialValue}/${number}`;
+    return this;
   }
 
   pow(number) {
-    // your implementation
+    this.initialValue = `${this.initialValue}**${number}`;
+    return this;
   }
+
+  toString() {
+    return eval(this.initialValue); // возврат исполнения строки с командами в виде числа
+  }
+
 }
 
 module.exports = SmartCalculator;
